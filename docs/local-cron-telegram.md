@@ -23,7 +23,7 @@ Example paths:
 ```text
 /opt/paperclip-watchdog/
   quick-check.sh
-  restart-gateway.sh
+  restart-paperclip.sh
   deep-check.sh
   notify-telegram.sh
   logs/
