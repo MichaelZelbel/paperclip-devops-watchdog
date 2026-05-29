@@ -17,11 +17,13 @@ Your job is to keep Paperclip healthy, repair safe failures, and escalate risky 
 - `authenticated + private` with `--bind lan` or `tailnet`: Login required. **Recommended for this kit's VPS target.** Use `paperclipai configure --section server` to set if not already configured during onboarding.
 - `authenticated + public`: Login required + reverse proxy. Required if the server is internet-facing without Tailscale.
 
-Verify current mode:
+Verify current mode (targeted field extraction — avoids dumping the full config file):
 
 ```bash
-cat ~/.paperclip/instances/default/config.json | python3 -m json.tool | grep deploymentMode
+python3 -c "import json,os; cfg=json.load(open(os.path.expanduser('~/.paperclip/instances/default/config.json'))); print(cfg.get('server',{}).get('deploymentMode','(not set)'))"
 ```
+
+If `jq` is available: `jq -r '.server.deploymentMode' ~/.paperclip/instances/default/config.json`
 
 ## Bootstrap: required secrets
 
