@@ -6,7 +6,15 @@ Goal: set up a VPS-local watchdog that checks the Paperclip server, performs saf
 
 ## TL;DR
 
-1. Install Paperclip on your VPS (`npx paperclipai onboard --yes --bind lan`).
+1. Install Paperclip on your VPS in **`authenticated` mode** — never the
+   unauthenticated `local_trusted` default. `npx paperclipai onboard --yes` alone
+   selects `local_trusted` (no login; anyone who reaches the server is admin), so
+   do not stop there. Onboard for config, then set `deploymentMode=authenticated`,
+   generate `BETTER_AUTH_SECRET` (`openssl rand -hex 32`), and expose it deliberately —
+   either behind a reverse proxy on a domain, or on a bare public IP with
+   `paperclipai allowed-hostname <IP>`. The premium DevOps Kit's
+   `01-installer-vps-doctor` playbook performs this end-to-end; this OSS watchdog
+   assumes the server is already in `authenticated` mode.
 2. Install Claude Code on the same VPS, or on a trusted machine that can SSH into the VPS.
 3. Open Claude Code and use this prompt:
 
