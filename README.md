@@ -12,7 +12,7 @@ Goal: set up a VPS-local watchdog that checks the Paperclip server, performs saf
    do not stop there. Onboard for config, then set `deploymentMode=authenticated`,
    generate `BETTER_AUTH_SECRET` (`openssl rand -hex 32`), and expose it deliberately —
    either behind a reverse proxy on a domain, or on a bare public IP with
-   `paperclipai allowed-hostname <IP>`. The premium DevOps Kit's
+   `paperclipai allowed-hostname <IP>`. The free Paperclip DevOps Kit's
    `01-installer-vps-doctor` playbook performs this end-to-end; this OSS watchdog
    assumes the server is already in `authenticated` mode.
 2. Install Claude Code on the same VPS, or on a trusted machine that can SSH into the VPS.
@@ -146,15 +146,14 @@ Claude Code may repair Paperclip, but it must not silently perform destructive, 
 
 This watchdog is free and MIT licensed, and it stays that way.
 
+There is also an extended build, the Paperclip DevOps Kit, free on Ko-fi. It
+takes this watchdog and wires it into a full hands-off setup: it installs
+Paperclip and Claude Code for you, onboards them, sets up Telegram alerts,
+and adds safe nightly upgrades with rollback, cost monitoring, a security
+baseline audit, incident-response playbooks, and more. You end up with a
+DevOps assistant living on your server that you can just ask to do things.
+
+[Get the Paperclip DevOps Kit free on Ko-fi](https://ko-fi.com/michaelc0de/shop)
+
 If it saved you time and you want to support the work, you can buy me a
-coffee on Ko-fi. Supporters get my personal extended build, the Paperclip
-DevOps Kit. It takes this watchdog and wires it into a full hands-off
-setup: it installs Paperclip and Claude Code for you, onboards them, sets
-up Telegram alerts, and adds safe nightly upgrades with rollback, cost
-monitoring, a security baseline audit, incident-response playbooks, and more.
-You end up with a DevOps assistant living on your server that you can just
-ask to do things.
-
-[Support on Ko-fi and get the Paperclip DevOps Kit](https://ko-fi.com/michaelc0de)
-
-Either way, thanks for using the watchdog.
+coffee there too. Either way, thanks for using the watchdog.
