@@ -4,6 +4,8 @@ This folder contains a proposed Claude Code DevOps workflow for keeping a Paperc
 
 Goal: set up a VPS-local watchdog that checks the Paperclip server, performs safe repairs, and escalates anything risky to the operator.
 
+Made by Michael Zelbel, who also builds [Godspeed Mission Control](https://godspeedmissioncontrol.com), a free personal AI you run yourself.
+
 ## TL;DR
 
 1. Install Paperclip on your VPS in **`authenticated` mode** — never the
@@ -157,3 +159,15 @@ DevOps assistant living on your server that you can just ask to do things.
 
 If it saved you time and you want to support the work, you can buy me a
 coffee there too. Either way, thanks for using the watchdog.
+
+## Related projects
+
+- The same watchdog for other agent servers:
+  [OpenClaw](https://github.com/MichaelZelbel/openclaw-claude-code-devops-watchdog),
+  [Hermes](https://github.com/MichaelZelbel/hermes-claude-code-devops-watchdog) and
+  [Hermes watching itself](https://github.com/MichaelZelbel/hermes-self-devops-watchdog).
+- [Chrome Agent Bridge](https://github.com/MichaelZelbel/chrome-agent-bridge): lets
+  an agent on your server use a real, logged-in Chrome on your own computer, for
+  the sites that block server browsers.
+- [Godspeed Mission Control](https://godspeedmissioncontrol.com): a free personal
+  AI that lives in a folder you own and wakes you only when it matters.
