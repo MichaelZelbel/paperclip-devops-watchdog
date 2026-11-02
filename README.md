@@ -6,6 +6,8 @@ Goal: set up a VPS-local watchdog that checks the Paperclip server, performs saf
 
 Made by Michael Zelbel, who also builds [Godspeed Mission Control](https://godspeedmissioncontrol.com), a free personal AI you run yourself.
 
+Running Paperclip on a server? The [Paperclip DevOps Kit](https://ko-fi.com/s/bd74ce8ee4) is free on Ko-fi: it installs Paperclip and Claude Code for you, with this watchdog, Telegram alerts, safe nightly upgrades with rollback and a security check.
+
 ## TL;DR
 
 1. Install Paperclip on your VPS in **`authenticated` mode** — never the
